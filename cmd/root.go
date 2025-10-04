@@ -10,6 +10,8 @@ import (
 var (
 	// Find is --search flag
 	Find bool
+	// Playlist is --playlist flag
+	Playlist bool
 
 	// Root cmd
 	rootCmd = &cobra.Command{
@@ -37,6 +39,7 @@ var (
 func Execute() {
 
 	// Persistent Flags
+	rootCmd.PersistentFlags().BoolVarP(&Playlist, "playlist", "p", false, "Option for downloading a playlist")
 	// TODO: implement search functionality
 	//rootCmd.PersistentFlags().BoolVarP(&Find, "search", "s", false, "Option for searching for songs")
 	// TODO: implement private downloads
